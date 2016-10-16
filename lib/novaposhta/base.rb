@@ -7,6 +7,6 @@ module Novaposhta
       end
     end
 
-    class_attr_accessor :api_key, :sender, :format
+    class_attr_accessor :url, :api_key, :sender, :format
   end
 end

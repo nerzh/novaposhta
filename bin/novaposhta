@@ -2,7 +2,5 @@
 
 require_relative '../lib/novaposhta'
 
-module NewPost
-
+module Novaposhta
 end
-

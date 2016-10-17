@@ -2,6 +2,7 @@ require 'json'
 require 'active_support'
 require 'novaposhta/version'
 require 'novaposhta/base'
+require 'novaposhta/address'
 
 module Novaposhta
   def self.configure

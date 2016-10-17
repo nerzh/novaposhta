@@ -21,19 +21,37 @@ Or install it yourself as:
     $ gem install novaposhta
 
 ## Usage
+## config/aplication.rb
+```ruby
+  Novaposhta.configure do |config|
+    config.url     = 'https://api.novaposhta.ua/v2.0/{format}/'
+    config.format  = :json # or :xml
+    config.api_key = '...'
+  end
+```
+## methods
+```ruby
+    # города
+    Novaposhta::Address.get_cities # => hash
 
-TODO: Write usage instructions here
+    # поиск города
+    Novaposhta::Address.find_city(name) # => hash
 
-## Development
+    # населенные пункты
+    Novaposhta::Address.get_settlements # => hash
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+    # области
+    Novaposhta::Address.get_areas # => hash
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+    # отделения и типы компании
+    Novaposhta::Address.get_warehouses # => hash
 
-## Contributing
+    # улицы
+    Novaposhta::Address.get_street(city_ref) # => hash
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/novaposhta. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
+    # поиск улицы
+    Novaposhta::Address.find_street(city_ref, name) # => hash
+```
 
 ## License
 

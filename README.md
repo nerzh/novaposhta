@@ -23,34 +23,34 @@ Or install it yourself as:
 ## Usage
 ## config/aplication.rb
 ```ruby
-  Novaposhta.configure do |config|
-    config.url     = 'https://api.novaposhta.ua/v2.0/{format}/'
-    config.format  = :json # or :xml
-    config.api_key = '...'
-  end
+Novaposhta.configure do |config|
+  config.url     = 'https://api.novaposhta.ua/v2.0/{format}/'
+  config.format  = :json # or :xml
+  config.api_key = '...'
+end
 ```
 ## methods
 ```ruby
-    # города
-    Novaposhta::Address.get_cities # => hash
+# города
+Novaposhta::Address.get_cities # => hash
 
-    # поиск города
-    Novaposhta::Address.find_city(name) # => hash
+# поиск города
+Novaposhta::Address.find_city(name) # => hash
 
-    # населенные пункты
-    Novaposhta::Address.get_settlements # => hash
+# населенные пункты
+Novaposhta::Address.get_settlements # => hash
 
-    # области
-    Novaposhta::Address.get_areas # => hash
+# области
+Novaposhta::Address.get_areas # => hash
 
-    # отделения и типы компании
-    Novaposhta::Address.get_warehouses # => hash
+# отделения и типы компании
+Novaposhta::Address.get_warehouses # => hash
 
-    # улицы
-    Novaposhta::Address.get_street(city_ref) # => hash
+# улицы
+Novaposhta::Address.get_street(city_ref) # => hash
 
-    # поиск улицы
-    Novaposhta::Address.find_street(city_ref, name) # => hash
+# поиск улицы
+Novaposhta::Address.find_street(city_ref, name) # => hash
 ```
 
 ## License

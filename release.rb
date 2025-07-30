@@ -30,6 +30,7 @@ if file[/VERSION\s+=\s+.+?(\d+)\.(\d+)\.(\d+).+/]
     user = `whoami`.strip
     system(%{sudo -u #{user} bash -lc 'cd #{GEM_DIR} && git add .'})
     system(%{sudo -u #{user} bash -lc 'cd #{GEM_DIR} && git commit -m "version #{version}"'})
+    p %{sudo -u #{user} bash -lc 'cd #{GEM_DIR} && rake release'}
     system(%{sudo -u #{user} bash -lc 'cd #{GEM_DIR} && rake release'})
   end
 else

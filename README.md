@@ -35,7 +35,7 @@ Or install it yourself as:
     Novaposhta::Address.get_cities # => hash
 
     # поиск города
-    Novaposhta::Address.find_city(name) # => hash
+    Novaposhta::Address.find_city('name') # => hash
 
     # населенные пункты
     Novaposhta::Address.get_settlements # => hash
@@ -47,10 +47,10 @@ Or install it yourself as:
     Novaposhta::Address.get_warehouses # => hash
 
     # улицы
-    Novaposhta::Address.get_street(city_ref) # => hash
+    Novaposhta::Address.get_street('city_ref') # => hash
 
     # поиск улицы
-    Novaposhta::Address.find_street(city_ref, name) # => hash
+    Novaposhta::Address.find_street('city_ref', 'name') # => hash
 ```
 
 ## License

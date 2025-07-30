@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_runtime_dependency     'activesupport'
-  spec.add_runtime_dependency     'nokogiri', '~> 1.6', '>= 1.6.8.1'
+  spec.add_runtime_dependency     'nokogiri'
 
   spec.add_development_dependency 'bundler', '~> 1.12'
   spec.add_development_dependency 'rake', '~> 10.0'

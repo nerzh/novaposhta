@@ -27,9 +27,10 @@ if file[/VERSION\s+=\s+.+?(\d+)\.(\d+)\.(\d+).+/]
   File.open(version_file, 'wb') { |f| f.write(data) }
   option = gets
   if option.strip.downcase == 'y'
-    system(%{cd #{GEM_DIR} && git add .})
-    system(%{cd #{GEM_DIR} && git commit -m 'version #{version}'})
-    system(%{cd #{GEM_DIR} && bash -lc 'rake release'})
+    user = `whoami`.strip
+    system(%{sudo -u #{user} bash -lc 'cd #{GEM_DIR} && git add .'})
+    system(%{sudo -u #{user} bash -lc 'cd #{GEM_DIR} && git commit -m "version #{version}"'})
+    system(%{sudo -u #{user} bash -lc 'cd #{GEM_DIR} && rake release'})
   end
 else
   p 'Can not parse version'
